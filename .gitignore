@@ -3,3 +3,5 @@ Reacher_Windows_x86_64.zip
 unity-environment.log
 .ipynb_checkpoints
 run-jupyter-conda.bat
+.idea
+__pycache__
