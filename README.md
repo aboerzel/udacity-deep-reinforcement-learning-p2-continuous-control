@@ -1,10 +1,9 @@
 [//]: # (Image References)
 
 [image1]: https://user-images.githubusercontent.com/10624937/43851024-320ba930-9aff-11e8-8493-ee547c6af349.gif "Trained Agent"
-[image2]: https://user-images.githubusercontent.com/10624937/43851646-d899bf20-9b00-11e8-858c-29b5c2c94ccc.png "Crawler"
 
 
-# Project 2: Continuous Control
+# Udacity Deep Reinforcement Learning Nanodegree - Project 2: Continuous Control
 
 ### Introduction
 
@@ -40,49 +39,108 @@ The barrier for solving the second version of the environment is slightly differ
 
 The environment is considered solved, when the average (over 100 episodes) of those average scores is at least +30. 
 
-### Getting Started
 
-1. Download the environment from one of the links below.  You need only select the environment that matches your operating system:
+[//]: # (Image References)
 
-    - **_Version 1: One (1) Agent_**
-        - Linux: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/one_agent/Reacher_Linux.zip)
-        - Mac OSX: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/one_agent/Reacher.app.zip)
-        - Windows (32-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/one_agent/Reacher_Windows_x86.zip)
-        - Windows (64-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/one_agent/Reacher_Windows_x86_64.zip)
+[image1]: https://user-images.githubusercontent.com/10624937/42135619-d90f2f28-7d12-11e8-8823-82b970a54d7e.gif "Trained Agent"
 
-    - **_Version 2: Twenty (20) Agents_**
-        - Linux: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher_Linux.zip)
-        - Mac OSX: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher.app.zip)
-        - Windows (32-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher_Windows_x86.zip)
-        - Windows (64-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher_Windows_x86_64.zip)
-    
-    (_For Windows users_) Check out [this link](https://support.microsoft.com/en-us/help/827218/how-to-determine-whether-a-computer-is-running-a-32-bit-version-or-64) if you need help with determining if your computer is running a 32-bit version or 64-bit version of the Windows operating system.
 
-    (_For AWS_) If you'd like to train the agent on AWS (and have not [enabled a virtual screen](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Training-on-Amazon-Web-Service.md)), then please use [this link](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/one_agent/Reacher_Linux_NoVis.zip) (version 1) or [this link](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher_Linux_NoVis.zip) (version 2) to obtain the "headless" version of the environment.  You will **not** be able to watch the agent without enabling a virtual screen, but you will be able to train the agent.  (_To watch the agent, you should follow the instructions to [enable a virtual screen](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Training-on-Amazon-Web-Service.md), and then download the environment for the **Linux** operating system above._)
+## Files included in this repository
 
-2. Place the file in the DRLND GitHub repository, in the `p2_continuous-control/` folder, and unzip (or decompress) the file. 
+The code used to create, train and evaluate the agent:
 
-### Instructions
+|File                                                         |Description                                                        |
+|:------------------------------------------------------------|:------------------------------------------------------------------|
+|[Continuous_Control.ipynb](Continuous_Control.ipynb)         |Jupyter notebook to train and evaluate the agent                   |
+|[ddpg_agent.py](ddpg_agent.py)                               |Implementation of the DDPG agent                                    |
+|[model.py](model.py)                                         |Network architecture used by the DDPG agent                         |
+|[drlnd.txt](drlnd.txt)                                       |Conda environment file                                             |
+|[Report.md](Report.md)                                       |Description of the development process and the learning algorithm  |
+|README.md                                                    |This README.md file                                                |
 
-Follow the instructions in `Continuous_Control.ipynb` to get started with training your own agent!  
+The trained models:
 
-### (Optional) Challenge: Crawler Environment
+|File                                               |Description                         |
+|:--------------------------------------------------|:-----------------------------------|
+|weights/checkpoint_actor.pth                       |Weights of the Actor Network        |
+|weights/checkpoint_critic.pth                      |Weights of the Critic Network       |
 
-After you have successfully completed the project, you might like to solve the more difficult **Crawler** environment.
 
-![Crawler][image2]
+## Environment Setup
 
-In this continuous control environment, the goal is to teach a creature with four legs to walk forward without falling.  
+This section describes how to get the code for this project and how to set up the environment.
 
-You can read more about this environment in the ML-Agents GitHub [here](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Learning-Environment-Examples.md#crawler).  To solve this harder task, you'll need to download a new Unity environment.  (**Note**: Udacity students should not submit a project with this new environment.)
+### Getting the code
 
-You need only select the environment that matches your operating system:
-- Linux: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Crawler/Crawler_Linux.zip)
-- Mac OSX: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Crawler/Crawler.app.zip)
-- Windows (32-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Crawler/Crawler_Windows_x86.zip)
-- Windows (64-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Crawler/Crawler_Windows_x86_64.zip)
+First create a project directory and change to the directory.
 
-Then, place the file in the `p2_continuous-control/` folder in the DRLND GitHub repository, and unzip (or decompress) the file.  Next, open `Crawler.ipynb` and follow the instructions to learn how to use the Python API to control the agent.
+Run the following command to clone this repository using GIT
 
-(_For AWS_) If you'd like to train the agent on AWS (and have not [enabled a virtual screen](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Training-on-Amazon-Web-Service.md)), then please use [this link](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Crawler/Crawler_Linux_NoVis.zip) to obtain the "headless" version of the environment.  You will **not** be able to watch the agent without enabling a virtual screen, but you will be able to train the agent.  (_To watch the agent, you should follow the instructions to [enable a virtual screen](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Training-on-Amazon-Web-Service.md), and then download the environment for the **Linux** operating system above._)
+```
+$ git clone https://github.com/aboerzel/udacity-deep-reinforcement-learning-p2-continuous-control.git
+```
 
+### Create the environment
+The `drlnd.txt` file included in this repository describes all the packages required to set up a [Conda](https://docs.conda.io/projects/conda/en/latest/index.html) environment.
+If you haven't installed Conda, download the [Conda installer](https://www.anaconda.com/distribution/) and follow the [installation instructions](https://docs.anaconda.com/anaconda/install/).
+
+Run the following commands to create the environment, this will create an environment named `drlnd`.
+
+```
+$ conda create --name drlnd --file drlnd.txt
+$ conda activate drlnd  
+```
+
+## Train and evaluate the Agent
+
+Activate the `drlnd` environment and start the Jupyter Notebook server by running the commands below. A new browser tab will open with a list of the files in the current folder.
+
+```
+$ conda activate drlnd
+$ jupyter notebook
+```
+
+Click on the [Continuous_Control.ipynb](Continuous_Control.ipynb) notebook to open it.  
+
+![](./resources/jupyter_notebook_workspace.png)  
+
+First set the variable `os_name` according to your operating system before you run the notebook cells so that the appropriate Unity environment will be downloaded.
+
+Available options:
+
+* mac
+* windows_x86
+* windows_x86_64
+* linux_x86
+* linux_x86_64  
+
+![](./resources/choose_operating_system.png)
+
+Then execute the notebook cells one after the other with the key combination **SHIFT + ENTER**, starting with cell **1**.
+
+In order to evaluate the agents only with the pre-trained weights, the cells for the training can be skipped. 
+The cells for visualizing the network architecture can also be skipped. 
+Corresponding information can be found in the comments in the Jupiter Notebook.
+
+### Hyperparameters
+The learning process can be influenced by changing the following parameters:  
+
+In the [Continuous_Control.ipynb](Continuous_Control.ipynb) file:  
+
+|Parameter         |Description|
+|:-----------------|:----------|
+|n_episodes        |Maximum number of training episodes|
+|max_t             |Maximum number of timesteps per episode|
+|print_every       |Number of episodes for calculating the average score value (sliding window)|
+
+In the [ddpg_agent.py](ddpg_agent.py) file:
+
+|Parameter                 |Description|
+|:-------------------------|:----------|
+|BUFFER_SIZE               |Replay buffer size|
+|BATCH_SIZE                |Batch size|
+|GAMMA                     |Discount factor for expected rewards|
+|TAU                       |Multiplicative factor for updating the target network weights|
+|LR_ACTOR                  |Learning rate of the actor network|
+|LR_CRITIC                 |Learning rate of the critic network|
+|WEIGHT_DECAY              |L2 weight decay|
