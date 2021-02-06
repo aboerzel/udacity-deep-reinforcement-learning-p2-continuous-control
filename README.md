@@ -37,7 +37,7 @@ The barrier for solving the second version of the environment is slightly differ
 - After each episode, we add up the rewards that each agent received (without discounting), to get a score for each agent.  This yields 20 (potentially different) scores.  We then take the average of these 20 scores. 
 - This yields an **average score** for each episode (where the average is over all 20 agents).
 
-The environment is considered solved, when the average (over 100 episodes) of those average scores is at least +30. 
+The environment is considered solved, when the average (over **100** episodes) of those average scores is at least **+30**. 
 
 
 [//]: # (Image References)
@@ -55,6 +55,11 @@ The code used to create, train and evaluate the agent:
 |[ddpg_agent.py](ddpg_agent.py)                               |Implementation of the DDPG agent                                    |
 |[model.py](model.py)                                         |Network architecture used by the DDPG agent                         |
 |[drlnd.txt](drlnd.txt)                                       |Conda environment file                                             |
+
+Documentation:
+
+|File                                                         |Description                                                        |
+|:------------------------------------------------------------|:------------------------------------------------------------------|
 |[Report.md](Report.md)                                       |Description of the development process and the learning algorithm  |
 |README.md                                                    |This README.md file                                                |
 
@@ -72,7 +77,7 @@ This section describes how to get the code for this project and how to set up th
 
 ### Getting the code
 
-First create a project directory and change to the directory.
+First create a project directory and change to this directory.
 
 Run the following command to clone this repository using GIT
 
@@ -108,11 +113,11 @@ First set the variable `os_name` according to your operating system before you r
 
 Available options:
 
-* mac
-* windows_x86
-* windows_x86_64
-* linux_x86
-* linux_x86_64  
+* mac (Mac OSX)
+* windows_x86 (Windows 32-bit)
+* windows_x86_64 (Windows 64-bit)
+* linux_x86 (Linux 32-bit)
+* linux_x86_64 (Linux 64-bit) 
 
 ![](./resources/choose_operating_system.png)
 
